@@ -22,9 +22,9 @@ public class SuperPile extends Stack<Integer>
 	|*							Methodes Public							*|
 	\*------------------------------------------------------------------*/
 
-	public void empiler(int x)
+	public void empiler(int valeur)
 		{
-		push(x);
+		push(valeur);
 		}
 
 	public int depiler()
@@ -34,6 +34,24 @@ public class SuperPile extends Stack<Integer>
 			notifyElement();
 			}
 		return pop();
+		}
+
+	public int sommet()
+		{
+		int premier = pop();
+		push(premier);
+
+		return premier;
+		}
+
+	public int sousSommet()
+		{
+		int premier = pop();
+		int second = pop();
+		push(second);
+		push(premier);
+
+		return second;
 		}
 
 	public int taille()
@@ -56,10 +74,6 @@ public class SuperPile extends Stack<Integer>
 		return instance;
 		}
 
-	/*------------------------------*\
-	|*				Get				*|
-	\*------------------------------*/
-
 	/*------------------------------------------------------------------*\
 	|*							Methodes Private						*|
 	\*------------------------------------------------------------------*/
@@ -80,4 +94,5 @@ public class SuperPile extends Stack<Integer>
 	\*------------------------------*/
 
 	private static SuperPile instance = null;
+
 	}
