@@ -32,8 +32,12 @@ public class SuperPile extends Stack<Integer>
 		if (0 == taille())
 			{
 			notifyElement();
+			return 0;
 			}
-		return pop();
+		else
+			{
+			return pop();
+			}
 		}
 
 	public int sommet()
